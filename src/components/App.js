@@ -1,13 +1,21 @@
+import Info_Inferior from "./Info_Inferior";
+import Inicio from "./Inicio";
+import Main from "./Main";
+import Topo from "./Topo";
+
+
+
 function App() {
     return (
         <div>
-            <div className="inicio">
-            <img src="Assets/Raio.png"/>
-            <span>ZapRecall</span>
-                <div className="button">
-                    <p>Iniciar Recall!</p>
-                </div>
-            </div>
+            <Inicio />
+
+            <Topo />
+
+            <Main />
+
+            <Info_Inferior />
+
         </div>
     )
 }
