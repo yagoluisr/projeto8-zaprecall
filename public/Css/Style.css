@@ -3,14 +3,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 120px;
+    margin-top: 50px;
     background: #FB6B6B;
+    box-sizing: border-box;
     font-family: 'Recursive', sans-serif;
+}
+
+.root {
+    width: 80%;
 }
 
 .inicio {
     height: 317px;
     display: flex;
+    margin-top: 80px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;    
@@ -31,7 +37,7 @@ body{
 
 .button {
     height: 54px;
-    width: 246px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,16 +61,17 @@ body{
 .topo {
     width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: green;
 }
 
 .topo img {
     height: 60px;
-    width: 52px;
+    width: 20%;
 }
 
 .topo span {
+    width: 100%;
     font-weight: 400;
     font-size: 36px;
     line-height: 45px;
@@ -75,6 +82,7 @@ body{
 }
 
 .main {
+    width: 100%;
     margin-top: 55px;
 }
 
@@ -114,4 +122,76 @@ body{
     right: 0;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
+}
+
+.flashcard {
+    min-height: 131px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 15px 5px 15px;
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.flashcard span {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.icones {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opcao1 {
+    height: 38px;
+    width: 85px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #FF3030;
+    border-radius: 5px;
+}
+
+.opcao2 {
+    height: 38px;
+    width: 85px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    background: #FF922E;
+    border-radius: 5px;
+}
+
+.opcao3 {
+    height: 38px;
+    width: 85px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #2FBE34;
+    border-radius: 5px;
 }

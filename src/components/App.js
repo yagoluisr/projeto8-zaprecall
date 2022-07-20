@@ -7,7 +7,7 @@ import Topo from "./Topo";
 
 function App() {
     return (
-        <div>
+        <>
             <Inicio />
 
             <Topo />
@@ -16,7 +16,7 @@ function App() {
 
             <Info_Inferior />
 
-        </div>
+        </>
     )
 }
 export default App;
