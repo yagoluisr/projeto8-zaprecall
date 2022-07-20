@@ -1,20 +1,23 @@
 import Info_Inferior from "./Info_Inferior";
-import Inicio from "./Inicio";
-import Main from "./Main";
-import Topo from "./Topo";
+import React from "react";
+import Tela1 from "./Inicio";
+import Tela2 from "./Tela2";
+
 
 
 
 function App() {
-    return (
+    const [tela2, setTela2] = React.useState(true);
+
+    return (       
         <>
-            <Inicio />
-
-            <Topo />
-
-            <Main />
-
-            <Info_Inferior />
+            <>
+                {tela2 ? <Tela1 /> : <Tela2 /> }
+            </> 
+            
+            <div className="button" onClick={() => (setTela2(!tela2))}>
+                <p>Iniciar Recall!</p>
+            </div>
 
         </>
     )
