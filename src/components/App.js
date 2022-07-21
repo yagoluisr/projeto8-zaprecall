@@ -1,6 +1,5 @@
-import Info_Inferior from "./Info_Inferior";
 import React from "react";
-import Tela1 from "./Inicio";
+import Tela1 from "./Tela1";
 import Tela2 from "./Tela2";
 
 
@@ -11,14 +10,7 @@ function App() {
 
     return (       
         <>
-            <>
-                {tela2 ? <Tela1 /> : <Tela2 /> }
-            </> 
-            
-            <div className="button" onClick={() => (setTela2(!tela2))}>
-                <p>Iniciar Recall!</p>
-            </div>
-
+            {tela2 ? <Tela1 tela2={tela2} setTela2={setTela2} /> : <Tela2 /> }
         </>
     )
 }
