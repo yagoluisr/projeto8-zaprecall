@@ -8,7 +8,7 @@ import Tela2 from "./Tela2";
 function App() {
     const [tela2, setTela2] = React.useState(true);
 
-    return (       
+    return (
         <>
             {tela2 ? <Tela1 tela2={tela2} setTela2={setTela2} /> : <Tela2 /> }
         </>
