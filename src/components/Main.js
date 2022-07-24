@@ -7,11 +7,11 @@ function Deck(){
         {pergunta: "O que é JSX? ", resposta:"Uma extensão de linguagem do JavaScript"},
         {pergunta: "O React é __", resposta:"Uma biblioteca JavaScript para construção de interfaces"},
         {pergunta: "Componentes devem iniciar com __ ", resposta:"Letra maiúscula"},
-        // {pergunta: "Podemos colocar __ dentro do JSX", resposta:"Expressões"},
-        // {pergunta: "O ReactDOM nos ajuda __ ", resposta:"Interagindo com a DOM para colocar componentes React na mesma"},
-        // {pergunta: "Usamos o npm para __ ", resposta:"Gerenciar os pacotes necessários e suas dependências"},
-        // {pergunta: "Usamos props para __ ", resposta:"Passar diferentes informações para componentes "},
-        // {pergunta: " Usamos estado (state) para __", resposta:"Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"},
+        {pergunta: "Podemos colocar __ dentro do JSX", resposta:"Expressões"},
+        {pergunta: "O ReactDOM nos ajuda __ ", resposta:"Interagindo com a DOM para colocar componentes React na mesma"},
+        {pergunta: "Usamos o npm para __ ", resposta:"Gerenciar os pacotes necessários e suas dependências"},
+        {pergunta: "Usamos props para __ ", resposta:"Passar diferentes informações para componentes "},
+        {pergunta: " Usamos estado (state) para __", resposta:"Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"},
     ])
 }
 
@@ -44,11 +44,13 @@ function TemplateFlashcard({setEstado, pergunta}) {
     )
 }
 
-function TemplateFlashcardOpcao({setEstado, resposta, setRespondido, contador, setContador, icones, setIcones}) {
+function TemplateFlashcardOpcao({setEstado, resposta, setRespondido, contador, setContador, icones, setIcones, setEsqueceu}) {
     function Estados1() {
+        setEsqueceu(1);
         setIcones([...icones, <img src="Assets/errou.png"/>])
         setEstado("respondido")
         setRespondido("errou")
+        
     }
     function Estados2() {
         setIcones([...icones, <img src="Assets/duvida.png"/>])
@@ -60,6 +62,7 @@ function TemplateFlashcardOpcao({setEstado, resposta, setRespondido, contador, s
         setEstado("respondido")
         setRespondido("acertou")
     }
+    
     return (
         <div className="flashcard">
             <span>{resposta}</span>
@@ -76,43 +79,9 @@ function TemplateFlashcardOpcao({setEstado, resposta, setRespondido, contador, s
     )
 }
 
-// function TemplateFlashcardOpcao({estado, setEstado, resposta, setRespondido, icones, setIcones}) {
-//     function plagioAna() {
-//         setIcones([...icones, <img src="Assets/errou.png"/>]);
-//         setEstado("respondido");
-//         setRespondido("errou");
-//     }
-
-
-//     return (
-//         <div className="flashcard">
-//             <span>{resposta}</span>
-//                 <div className="opcoes">
-
-//                     <div className="opcao1" onClick={() => {
-                        
-//                         plagioAna();
-                        
-//                     }}>Não lembrei</div>
-                        
-
-//                     <div className="opcao2" onClick={() => {setEstado("respondido");
-//                     setRespondido("duvida")
-//                     } }>Quase não lembrei</div>   
-
-//                     <div className="opcao3" onClick={() => {
-//                         setEstado("respondido")
-//                         setRespondido("acertou")
-//                         console.log(estado + "YAGO");
-//                         } }>Zap!</div>
-//                 </div>
-//         </div>
-//     )
-// }
 
 function TemplateRespondido({index, respondido}) {
     
-    console.log("abc");
     return (
         <div className={respondido}>
             <span>Pergunta {index}</span>
@@ -121,21 +90,24 @@ function TemplateRespondido({index, respondido}) {
     )
 }
 
-function VerificarEstado({index, pergunta, resposta, contador, setContador, icones, setIcones}) {
+function VerificarEstado({index, pergunta, resposta, contador, setContador, icones, setIcones, setEsqueceu}) {
     const [respondido, setRespondido] = React.useState("pergunta");
     const [estado, setEstado] = React.useState("inicio");
     
-    console.log(estado);
     
-
     if(estado === "inicio"){
         return (
-            <TemplatePergunta setEstado={setEstado} index={index} respondido={respondido} />
+            <TemplatePergunta 
+            setEstado={setEstado} 
+            index={index} 
+            respondido={respondido} />
         )
     }
     if(estado === "pergunta"){
         return (
-            <TemplateFlashcard setEstado={setEstado} pergunta={pergunta} />
+            <TemplateFlashcard 
+            setEstado={setEstado} 
+            pergunta={pergunta} />
         )
     }
     if(estado === "respostas"){
@@ -148,13 +120,19 @@ function VerificarEstado({index, pergunta, resposta, contador, setContador, icon
             contador={contador} 
             setContador={setContador} 
             icones={icones} 
-            setIcones={setIcones}/>
+            setIcones={setIcones}
+            setEsqueceu={setEsqueceu}/>
+            
         )
     }
     if(estado === "respondido"){
-        console.log("abobrinha !")
         return (
-            <TemplateRespondido setEstado={setEstado} index={index} respondido={respondido} icones={icones} setIcones={setIcones}/>
+            <TemplateRespondido 
+            setEstado={setEstado} 
+            index={index} 
+            respondido={respondido} 
+            icones={icones} 
+            setIcones={setIcones}/>
         )
     }
 }
@@ -166,8 +144,15 @@ export default function Main() {
 
     const perguntas = Deck();
     const [contador, setContador] = React.useState(0);
+    const [esqueceu, setEsqueceu] = React.useState(0);
 
-    <VerificarEstado pergunta={perguntas} contador={contador} setContador={setContador} icones={icones} setIcones={setIcones}/>
+    <VerificarEstado 
+    pergunta={perguntas} 
+    contador={contador} 
+    setContador={setContador} 
+    icones={icones} 
+    setIcones={setIcones}
+    setEsqueceu={setEsqueceu}/>
 
     const quantidade = Deck();
     
@@ -175,10 +160,22 @@ export default function Main() {
         <div className="main">
             
             {perguntas.map((obj, index) => (
-                <VerificarEstado key={index} index={index+1} {...obj} contador={contador} setContador={setContador} icones={icones} setIcones={setIcones} />
+                <VerificarEstado 
+                key={index} 
+                index={index+1} 
+                {...obj} 
+                contador={contador} 
+                setContador={setContador} 
+                icones={icones} 
+                setIcones={setIcones}
+                setEsqueceu={setEsqueceu} />
             ))}
 
-            <Info_Inferior contador={contador} quantidade={quantidade} icones={icones}/>
+            <Info_Inferior 
+            contador={contador} 
+            quantidade={quantidade} 
+            icones={icones}
+            esqueceu={esqueceu}/>
 
         </div>
     )
