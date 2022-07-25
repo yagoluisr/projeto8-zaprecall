@@ -1,5 +1,5 @@
 export default function Deck(){
-    return ([
+    const perguntas = [
         {
             pergunta: "O que é JSX? ", 
             resposta:"Uma extensão de linguagem do JavaScript"
@@ -32,5 +32,9 @@ export default function Deck(){
             pergunta: " Usamos estado (state) para __", 
             resposta:"Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         },
-    ])
+    ]
+
+    perguntas.sort(() => Math.random() - 0.5)
+
+    return perguntas;
 }

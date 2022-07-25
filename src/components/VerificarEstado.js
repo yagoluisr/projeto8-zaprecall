@@ -10,7 +10,7 @@ export default function VerificarEstado({
     pergunta,
     resposta,
     contador,
-    setContador,
+    setContador,    
     icones,
     setIcones,
     setEsqueceu,

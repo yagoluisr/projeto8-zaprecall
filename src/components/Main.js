@@ -10,8 +10,6 @@ import TemplateRespondido from "./TemplateRespondido";
 import VerificarEstado from "./VerificarEstado";
 import Deck from "./Deck";
 
-
-
 export default function Main() {
     const images = {
         acertou: acertou,
@@ -25,6 +23,7 @@ export default function Main() {
     const [icones, setIcones] = React.useState([]);
     const [contador, setContador] = React.useState(0);
     const [esqueceu, setEsqueceu] = React.useState(0);
+
 
     <>  
         <Deck />
