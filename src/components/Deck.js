@@ -1,36 +1,36 @@
 export default function Deck(){
     const perguntas = [
         {
-            pergunta: "O que é JSX? ", 
-            resposta:"Uma extensão de linguagem do JavaScript"
+            pergunta: "O que está escrito em João 3:16 ?", 
+            resposta: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna"
         },
         {
-            pergunta: "O React é __", 
-            resposta:"Uma biblioteca JavaScript para construção de interfaces"
+            pergunta: "O que diz o versículo João 14:6 ?", 
+            resposta: "Jesus respondeu: — Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim"
         },
         {
-            pergunta: "Componentes devem iniciar com __ ", 
-            resposta:"Letra maiúscula"
+            pergunta: "Qual o maior mandamento de todos?", 
+            resposta: "Amarás o senhor seu Deus sobre todas as coisas, e amarás à seu próximo como a ti mesmo"
         },
         {
-            pergunta: "Podemos colocar __ dentro do JSX", 
-            resposta:"Expressões"
+            pergunta: "O que a Ceia representa?", 
+            resposta: "A Ceia representa o sacrifício de Jesus por nós na cruz, assim, todas as vezes que participamos, lembramos o que Ele fez por nós"
         },
         {
-            pergunta: "O ReactDOM nos ajuda __ ", 
-            resposta:"Interagindo com a DOM para colocar componentes React na mesma"
+            pergunta: "Batismo salva?", 
+            resposta: "Não"
         },
         {
-            pergunta: "Usamos o npm para __ ", 
-            resposta:"Gerenciar os pacotes necessários e suas dependências"
+            pergunta: "Por que a Cruz vazia?", 
+            resposta: "Porque Cristo ressuscitou."
         },
         {
-            pergunta: "Usamos props para __ ", 
-            resposta:"Passar diferentes informações para componentes "
+            pergunta: "Jesus vai voltar de novo? Quando?", 
+            resposta: "Sim, nao se sabe a hora exata, mas em breve 😝"
         },
         {
-            pergunta: " Usamos estado (state) para __", 
-            resposta:"Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
+            pergunta: "Quantos livros tem a bíblia?", 
+            resposta: "66"
         },
     ]
 
