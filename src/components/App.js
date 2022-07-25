@@ -1,9 +1,8 @@
 import React from "react";
 import Tela1 from "./Tela1";
 import Tela2 from "./Tela2";
-
-
-
+import "./Css/Reset.css";
+import "./Css/Style.css";
 
 function App() {
     const [tela2, setTela2] = React.useState(true);
