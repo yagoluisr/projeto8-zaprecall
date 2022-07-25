@@ -9,6 +9,8 @@ import TemplateFlashcardOpcao from "./TemplateFlashcardOpcao";
 import TemplateRespondido from "./TemplateRespondido";
 import VerificarEstado from "./VerificarEstado";
 import Deck from "./Deck";
+import shuffleArray from "./shuffleArray";
+
 
 export default function Main() {
     const images = {
@@ -24,6 +26,11 @@ export default function Main() {
     const [contador, setContador] = React.useState(0);
     const [esqueceu, setEsqueceu] = React.useState(0);
 
+    <shuffleArray />   
+
+    if(contador === 0){
+        shuffleArray(perguntas);
+    }
 
     <>  
         <Deck />
